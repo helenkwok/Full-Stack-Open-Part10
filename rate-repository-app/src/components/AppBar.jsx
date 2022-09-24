@@ -1,4 +1,4 @@
-import { View, Pressable, StyleSheet } from 'react-native';
+import { View, ScrollView, StyleSheet } from 'react-native';
 import AppBarTab from './AppBarTab';
 import theme from '../theme';
 
@@ -10,10 +10,14 @@ const styles = StyleSheet.create({
 });
 
 const AppBar = () => {
-  return <View style={styles.container}>
-    <AppBarTab path='/' tab={'Repositories'}/>
-    <AppBarTab path='/signin' tab={'Sign in'}/>
-  </View>;
+  return (
+    <View style={styles.container}>
+      <ScrollView horizontal>
+        <AppBarTab path='/' tab={'Repositories'}/>
+        <AppBarTab path='/signin' tab={'Sign in'}/>
+      </ScrollView>
+    </View>
+  );
 };
 
 export default AppBar;
