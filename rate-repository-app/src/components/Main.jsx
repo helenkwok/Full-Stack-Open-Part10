@@ -1,11 +1,10 @@
-import Constants from 'expo-constants';
 import { StyleSheet, View } from 'react-native';
 import AppBar from './AppBar';
 import RepositoryList from './RepositoryList';
 
 const styles = StyleSheet.create({
   container: {
-    //marginTop: Constants.statusBarHeight,
+    backgroundColor: '#e1e4e8',
     flexGrow: 1,
     flexShrink: 1,
   },

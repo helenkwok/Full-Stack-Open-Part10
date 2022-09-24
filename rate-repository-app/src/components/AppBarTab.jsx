@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
 
 const AppBarTab = ({ tab }) => {
   return (
-    <Text style={styles.text} backgroundColor='appBar' color='appBar' fontSize='appBar' fontWeight='bold'>
+    <Text style={styles.text} backgroundColor='appBar' color='white' fontSize='subheading' fontWeight='bold'>
       {tab}
     </Text>
 )};
