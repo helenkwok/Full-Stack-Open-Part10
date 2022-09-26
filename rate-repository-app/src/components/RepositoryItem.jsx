@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    marginBottom: 16,
   },
   flexContainerB: {
     flexDirection: 'row',
