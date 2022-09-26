@@ -7,6 +7,7 @@ import SignIn from './SignIn';
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#e1e4e8',
+    flex: 1,
   },
 });
 
