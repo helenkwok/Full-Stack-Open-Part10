@@ -1,5 +1,6 @@
 import { Formik } from 'formik';
 import * as yup from 'yup';
+import { useNavigate } from "react-router-native";
 import SigninForm from './SigninForm';
 import useSignIn from '../../hooks/useSignIn'
 
@@ -18,6 +19,7 @@ const validationSchema = yup.object().shape({
 });
 
 const SignIn = () => {
+  const navigate = useNavigate();
   const [signIn] = useSignIn();
 
   const onSubmit = async (values, {setSubmitting, resetForm}) => {
@@ -32,6 +34,7 @@ const SignIn = () => {
     ;
     resetForm(initialValues)
     setSubmitting(false);
+    navigate('/')
   };
   return (
     <Formik
