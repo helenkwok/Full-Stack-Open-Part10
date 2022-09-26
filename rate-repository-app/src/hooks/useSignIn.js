@@ -22,7 +22,7 @@ const useSignIn = () => {
       }
     })
 
-    authStorage.setAccessToken(tokenResponse.data.authenticate.accessToken)
+    await authStorage.setAccessToken(tokenResponse.data.authenticate.accessToken)
     apolloClient.resetStore();
     return tokenResponse
   };
