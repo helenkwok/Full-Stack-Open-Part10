@@ -1,10 +1,12 @@
 import { View, ScrollView, StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
-import { useQuery } from '@apollo/client';
+import { useApolloClient, useQuery } from '@apollo/client';
+import { useNavigate } from "react-router-native";
 import AppBarTab from './AppBarTab';
 import theme from '../../utils/theme';
 import { GET_ME } from '../../graphql/queries';
-import SignOut from './SignOut';
+import useAuthStorage from '../../hooks/useAuthStorage';
+import useSignOut from '../../hooks/useSignOut';
 
 const styles = StyleSheet.create({
   container: {
@@ -15,6 +17,8 @@ const styles = StyleSheet.create({
 });
 
 const AppBar = () => {
+  const onSignOut = useSignOut();
+
   const { loading, error, data } = useQuery(GET_ME);
 
   return (
@@ -22,7 +26,10 @@ const AppBar = () => {
       <ScrollView horizontal>
         <AppBarTab path='/' tab={'Repositories'}/>
         {!loading && data.me?
-          <SignOut />
+          <AppBarTab
+            onPress={onSignOut}
+            tab='Sign out'
+          />
         :
           <AppBarTab
             path='/signin'
