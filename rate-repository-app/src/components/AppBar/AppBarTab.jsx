@@ -1,10 +1,11 @@
 import { StyleSheet } from 'react-native';
 import { Link } from "react-router-native";
-import Text from './Text';
+import Text from '../common/Text';
 
 const styles = StyleSheet.create({
   text: {
-    padding: 20,
+    paddingHorizontal: 15,
+    paddingVertical: 20,
   }
 });
 

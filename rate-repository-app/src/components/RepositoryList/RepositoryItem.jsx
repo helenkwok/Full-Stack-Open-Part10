@@ -4,7 +4,8 @@ import RepositoryItemStat from './RepositoryItemStat';
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    paddingHorizontal: 15,
+    paddingVertical: 20,
     backgroundColor: 'white',
   },
   flexContainerA: {
