@@ -22,16 +22,16 @@ const styles = StyleSheet.create({
   }
 });
 
-const SigninForm = ({ onSubmit }) => {
+const SignInForm = ({ onSubmit }) => {
   return (
     <View style={styles.container}>
-      <FormikTextInput style={styles.input} name="username" placeholder='Username'/>
-      <FormikTextInput style={styles.input} name="password" placeholder='Password'secureTextEntry />
-      <Pressable onPress={onSubmit}>
+      <FormikTextInput testID="username" style={styles.input} name="username" placeholder='Username'/>
+      <FormikTextInput testID="password" style={styles.input} name="password" placeholder='Password'secureTextEntry />
+      <Pressable testID="signIn" onPress={onSubmit}>
         <Text style={styles.button} color='white' backgroundColor='primary' fontWeight='bold'>Sign in</Text>
       </Pressable>
     </View>
   )
 }
 
-export default SigninForm
+export default SignInForm
