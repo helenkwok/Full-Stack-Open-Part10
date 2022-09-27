@@ -1,4 +1,6 @@
-import { StyleSheet, View, Image } from 'react-native';
+import { StyleSheet, View, Image, Pressable } from 'react-native';
+import { openURL } from 'expo-linking';
+import Text from '../common/Text';
 import RepositoryItemDescription from './RepositoryItemDescription';
 import RepositoryItemStat from './RepositoryItemStat';
 
@@ -25,9 +27,17 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
   },
+  button: {
+    marginTop: 15,
+    padding: 15,
+    textAlign: 'center',
+    borderWidth: 0,
+    borderRadius: 4,
+    overflow: 'hidden', //fix border radius issue on iOS
+  },
 });
 
-const RepositoryItem = ({ item }) => {
+const RepositoryItem = ({ item, url }) => {
   return (
     <View testID='repositoryItem' style={styles.container}>
       <View style={styles.flexContainerA}>
@@ -57,6 +67,20 @@ const RepositoryItem = ({ item }) => {
           title='Rating'
         />
       </View>
+      {url &&
+        <Pressable
+          onPress={() => openURL(item.url)}
+        >
+          <Text
+            style={styles.button}
+            backgroundColor='primary'
+            color='white'
+            fontWeight='bold'
+          >
+            Open in GitHub
+          </Text>
+        </Pressable>
+      }
     </View>
   )
 }
