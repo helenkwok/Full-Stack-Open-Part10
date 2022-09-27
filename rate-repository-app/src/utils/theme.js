@@ -21,6 +21,10 @@ const theme = {
     normal: '400',
     bold: '700',
   },
+  icon: {
+    width:50,
+    height: 50,
+  }
 };
 
 export default theme;

@@ -1,6 +1,7 @@
 import { StyleSheet, View, Image, Pressable } from 'react-native';
 import { openURL } from 'expo-linking';
 import Text from '../common/Text';
+import theme from '../../utils/theme';
 import RepositoryItemDescription from './RepositoryItemDescription';
 import RepositoryItemStat from './RepositoryItemStat';
 
@@ -24,8 +25,8 @@ const styles = StyleSheet.create({
     flexGrow: 0,
     marginRight: 20,
     borderRadius: 4,
-    width: 50,
-    height: 50,
+    width: theme.icon.width,
+    height: theme.icon.height,
   },
   button: {
     marginTop: 15,
