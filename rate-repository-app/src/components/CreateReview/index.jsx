@@ -57,9 +57,7 @@ const CreateReview = () => {
         rating: parseInt(rating),
         text
       });
-      console.log(response)
-      repositoryId = response.data.createReview.repositoryId
-      console.log(response.data)
+      repositoryId = response.data.createReview.repositoryId;
     } catch (e) {
       console.log(e);
     };
