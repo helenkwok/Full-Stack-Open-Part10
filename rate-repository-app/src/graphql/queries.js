@@ -21,17 +21,31 @@ export const GET_REPOSITORIES = gql`
 `;
 
 export const GET_ME = gql`
-  query {
+  query ($first: Int, $after: String, $includeReviews: Boolean = false) {
     me {
       id
       username
+      reviews (first: $first, after: $after) @include(if: $includeReviews) {
+        edges {
+          node {
+            ...ReviewDetails
+          }
+          cursor
+        }
+        pageInfo {
+          endCursor
+          startCursor
+          hasNextPage
+        }
+      }
     }
   }
+  ${REVIEW_DETAILS}
 `;
 
 export const GET_REPOSITORY = gql`
   query ($id: ID!, $first: Int, $after: String) {
-    repository(id: $id) {
+    repository (id: $id) {
       ...RepositoryDetails
       reviews (first: $first, after: $after) {
         totalCount

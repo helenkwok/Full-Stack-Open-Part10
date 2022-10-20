@@ -1,4 +1,4 @@
-import { FlatList, View, StyleSheet } from 'react-native';
+import { FlatList } from 'react-native';
 import { useParams } from 'react-router-native';
 import RepositoryItem from '../RepositoryItem';
 import ReviewItem from '../ReviewItem';

@@ -27,7 +27,14 @@ const AppBar = () => {
         <AppBarTab path='/' tab={'Repositories'}/>
         {!loading && data.me?
           <>
-            <AppBarTab path='/createreview' tab={'Create a review'} />
+            <AppBarTab
+              path='/createreview'
+              tab={'Create a review'}
+            />
+            <AppBarTab
+              path='/myreviews'
+              tab={'My reviews'}
+            />
             <AppBarTab
               onPress={onSignOut}
               tab='Sign out'
