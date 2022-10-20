@@ -4,7 +4,7 @@ import ItemSeparator from '../common/ItemSeparator';
 import useReviews from '../../hooks/useReviews'
 
 const userReview = () => {
-  const { me, fetchMore } = useReviews({
+  const { me, refetch, fetchMore } = useReviews({
     includeReviews: true,
   });
 
@@ -22,7 +22,7 @@ const userReview = () => {
   return (
     <FlatList
       data={reviewNodes}
-      renderItem={({ item }) => <Review review={item} />}
+      renderItem={({ item }) => <Review review={item} refetch={refetch} />}
       keyExtractor={item => item.id}
       ItemSeparatorComponent={ItemSeparator}
       onEndReached={onEndReach}
